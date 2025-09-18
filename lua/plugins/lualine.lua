@@ -7,8 +7,12 @@ return {
     require("lualine").setup({
       options = {
         -- theme = "codedark",
-        theme = "nightfly",
-        section_separators = { left = "", right = "" },
+        -- theme = "nightfly",
+        theme = "cyberdream",
+        -- theme = "everforest",
+        -- theme = "tokyonight",
+        -- theme = "gruvbox",
+        -- section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
         globalstatus = true,
       },

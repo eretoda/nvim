@@ -3,8 +3,10 @@ local opt = utils.set
 local cmd = utils.cmd
 
 -- NOTE 基本設定
--- cmd("colorscheme tokyonight-moon")
-cmd("colorscheme gruvbox")
+-- cmd("colorscheme tokyonight-storm")
+-- cmd("colorscheme gruvbox")
+cmd("colorscheme cyberdream")
+-- cmd("colorscheme everforest")
 cmd("syntax enable")
 cmd("filetype plugin indent on")
 opt.helplang = "ja"
@@ -12,6 +14,7 @@ opt.clipboard = "unnamedplus"
 opt.mouse = "a"
 opt.termguicolors = true
 opt.swapfile = false
+opt.background = "dark"
 
 -- NOTE タブやインデント関連の設定
 cmd("set nowrap")
@@ -24,7 +27,7 @@ opt.smartindent = true
 
 -- NOTE 表示関連の設定
 opt.number = true
-opt.cursorline = true
+opt.cursorline = false
 opt.signcolumn = "yes"
 opt.scrolloff = 5
 opt.virtualedit = "onemore"
@@ -46,3 +49,11 @@ cmd("hi! Boolean  ctermfg=171 guifg=#d75fff")
 
 -- autocmd系
 vim.api.nvim_create_autocmd("VimEnter", { command = "ShowkeysToggle" })
+vim.api.nvim_create_autocmd("VimEnter", { command = "RenderMarkdown toggle" })
+vim.api.nvim_create_autocmd("VimEnter", { command = "ColorizerToggle" })
+
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  },
+})
