@@ -3,9 +3,13 @@ local opt = utils.set
 local cmd = utils.cmd
 
 -- NOTE 基本設定
--- cmd("colorscheme tokyonight-storm")
+-- cmd("colorscheme tokyonight-night")
 -- cmd("colorscheme gruvbox")
-cmd("colorscheme cyberdream")
+cmd("colorscheme onedark")
+-- cmd("colorscheme murphy")
+-- cmd("colorscheme cyberdream")
+-- cmd("colorscheme slate")
+-- cmd("colorscheme no-clown-fiesta")
 -- cmd("colorscheme everforest")
 cmd("syntax enable")
 cmd("filetype plugin indent on")
@@ -18,10 +22,13 @@ opt.background = "dark"
 
 -- NOTE タブやインデント関連の設定
 cmd("set nowrap")
-opt.tabstop = 2
+-- opt.tabstop = 2
+opt.tabstop = 4
 opt.expandtab = true
-opt.shiftwidth = 2
-opt.softtabstop = 2
+-- opt.shiftwidth = 2
+opt.shiftwidth = 4
+-- opt.softtabstop = 2
+opt.softtabstop = 4
 opt.autoindent = true
 opt.smartindent = true
 
@@ -43,17 +50,37 @@ opt.hlsearch = true
 opt.updatetime = 360
 
 -- NOTE ハイライト設定
+-- cmd("hi! MatchParen cterm=bold gui=bold ctermfg=201 guifg=#ff00ff")
+-- cmd("hi! Visual cterm=bold gui=bold ctermfg=236 ctermbg=253 guifg=#303030 guibg=#dadada")
+-- cmd("hi! Boolean  ctermfg=171 guifg=#d75fff")
+
+-- autocmd系
+-- vim.api.nvim_create_autocmd("VimEnter", { command = "ShowkeysToggle" })
+vim.api.nvim_create_autocmd("VimEnter", { command = "RenderMarkdown toggle" })
+-- vim.api.nvim_create_autocmd("VimEnter", { command = "ColorizerToggle" })
+
+-- SetAllGreen()
+-- vim.api.nvim_create_autocmd("ColorScheme", { pattern = "*", callback = SetAllGreen })
+
+HighLightInfo()
+
 cmd("hi! MatchParen cterm=bold gui=bold ctermfg=201 guifg=#ff00ff")
 cmd("hi! Visual cterm=bold gui=bold ctermfg=236 ctermbg=253 guifg=#303030 guibg=#dadada")
 cmd("hi! Boolean  ctermfg=171 guifg=#d75fff")
+-- cmd("hi! LineNr guifg=#303030")
+cmd("hi! LineNr guifg=#afafaf")
+-- cmd("hi! LineNr guifg=#ee7800")
+-- cmd("hi! CursorLineNr guifg=#ee7800")
+cmd("hi! CursorLineNr guifg=#ee7800")
+cmd("hi! PreProc guifg=#f1ff5e")
+cmd("hi! htmlTagName guifg=#f1ff5e")
 
--- autocmd系
-vim.api.nvim_create_autocmd("VimEnter", { command = "ShowkeysToggle" })
-vim.api.nvim_create_autocmd("VimEnter", { command = "RenderMarkdown toggle" })
-vim.api.nvim_create_autocmd("VimEnter", { command = "ColorizerToggle" })
+-- cmd("hi! Number guifg=#c49060")
+-- cmd("hi! Operator guifg=#0055dd")
+-- cmd("hi! Function guifg=#0055dd")
 
 vim.filetype.add({
-  pattern = {
-    [".*%.blade%.php"] = "blade",
-  },
+	pattern = {
+		[".*%.blade%.php"] = "blade",
+	},
 })
