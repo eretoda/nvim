@@ -25,8 +25,8 @@ key("n", "<space>wl", "<C-w>L", { noremap = true })
 key("n", "<space>wh", "<C-w>H", { noremap = true })
 key("n", "<space>wj", "<C-w>J", { noremap = true })
 key("n", "<space>wk", "<C-w>K", { noremap = true })
--- key("n", "<space><space>k", "<C-w>c", { noremap = true })
--- key("n", "<space><space>h", "<C-w>c", { noremap = true })
+
+key("n", "<space><space>np", ":NoNeckPain<CR>", { noremap = true })
 
 -- arg周り
 key("n", "<space><space>a", ":argadd %<CR>", { noremap = true })
@@ -36,7 +36,6 @@ key("n", "<space><space>s", ":args ", { noremap = true })
 -- テキスト操作
 key("n", "<space>h", "^", { noremap = true })
 key("n", "<space>l", "$", { noremap = true })
--- key("n", "<C-]>", "ggVG", { noremap = true })
 key("n", "<C-w>y", "ggVG", { noremap = true })
 
 -- 行に関する操作
@@ -44,7 +43,7 @@ key("n", "<C-s>", [[:lua CompleteUseState()<CR> :w<CR>]], { noremap = true, sile
 key("n", "<C-i>", [[:lua YankFileName()<CR>]], { noremap = true, silent = true })
 
 -- Google検索
-key("n", "<space><space>g", ":OpenBrowserSearch ", { noremap = true })
+key("n", "<space><space>gg", ":OpenBrowserSearch ", { noremap = true })
 
 -- NeoTree
 key("n", "<C-t>", ":Neotree toggle reveal_force_cwd<CR>", { noremap = true, silent = true })

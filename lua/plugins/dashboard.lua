@@ -1,0 +1,55 @@
+return {
+	"nvimdev/dashboard-nvim",
+	event = "VimEnter",
+	config = function()
+		require("dashboard").setup({
+			theme = "hyper",
+			-- config = {
+			-- 	center = {
+			-- 		{
+			-- 			icon = "",
+			-- 			icon_hl = "group",
+			-- 			desc = "description",
+			-- 			desc_hl = "group",
+			-- 			key = "shortcut key in dashboard buffer not keymap !!",
+			-- 			key_hl = "group",
+			-- 			key_format = " [%s]", -- `%s` will be substituted with value of `key`
+			-- 			action = "",
+			-- 		},
+			-- 	},
+			-- 	footer = {},
+			-- 	vertical_center = false, -- Center the Dashboard on the vertical (from top to bottom)
+			-- },
+			config = {
+				week_header = {
+					enable = true,
+				},
+				project = {
+					enable = false,
+				},
+				shortcut = {
+					{ desc = "Update", group = "@property", action = "Lazy update", key = "u" },
+					{
+						icon = "",
+						icon_hl = "@variable",
+						desc = "Files",
+						group = "Label",
+						action = "Telescope git_files",
+						key = "f",
+					},
+					-- {
+					-- 	desc = "Memo",
+					-- 	action = "Telekasten",
+					-- 	key = "m",
+					-- },
+					{
+						desc = "dotfiles",
+						action = "e ~/dotfiles/README.md",
+						key = "d",
+					},
+				},
+			},
+		})
+	end,
+	dependencies = { { "nvim-tree/nvim-web-devicons" } },
+}
