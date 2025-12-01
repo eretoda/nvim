@@ -9,27 +9,64 @@ return {
 
     require("mason-lspconfig").setup({
       automatic_installation = true,
-      ensure_installed = { "lua_ls", "ts_ls", "markdown_oxide" },
+      -- ensure_installed = { "lua_ls", "ts_ls", "ruby_lsp" },
+      ensure_installed = { "ts_ls", "ruby_lsp" },
     })
 
     local lspconfig = require("lspconfig")
-    -- lspconfig.lua_ls.setup({
-    -- 	settings = {
-    -- 		Lua = {
-    -- 			diagnostics = { globals = { "vim" } },
-    -- 			workspace = { checkThirdParty = false },
-    -- 			telemetry = { enable = false },
-    -- 		},
-    -- 	},
-    -- })
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+    lspconfig.laravel_ls.setup({
+      cmd = { "/Users/erevista_04/go/bin/laravel-ls" },
+      capabilities = capabilities,
+    })
+
+    lspconfig.lua_ls.setup({
+      settings = {
+        Lua = {
+          diagnostics = { globals = { "vim" } },
+          workspace = { checkThirdParty = true },
+          telemetry = { enable = true },
+        },
+      },
+    })
 
     -- lspconfig.ts_ls.setup({})
+
     -- lspconfig.eslint_d.setup({
-    -- 	settings = {
-    -- 		enable = true,
-    -- 	},
+    --   settings = {
+    --     enable = true,
+    --   },
     -- })
-    lspconfig.cssls.setup({})
+
+    -- lspconfig.cssls.setup({})
+
+    -- lspconfig.phpactor.setup({
+    -- 	-- filetypes = { "php" },
+    -- 	capabilities = capabilities,
+    -- })
+
+    -- lspconfig.intelephense.setup({
+    -- 	filetypes = { "php", "blade", "blade.php" },
+    -- 	capabilities = capabilities,
+    -- })
+
+    -- lspconfig.intelephense.setup({
+    -- settings = {
+    -- intelephense = {
+    --   format = {
+    --     provider = "php-cs-fixer",
+    --     on_save = true,
+    --   },
+    --
+    --   linter = {
+    --     provider = "phpcs",
+    --     enable = true,
+    --   },
+    -- },
+    -- },
+    -- })
 
     -- オプション: 一般的なLSPアクションのキーバインド (このファイルにまとめるのが良い)
     -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })

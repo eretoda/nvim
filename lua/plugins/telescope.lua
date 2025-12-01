@@ -11,8 +11,10 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		telescope.load_extension("live_grep_args")
+		telescope.load_extension("harpoon")
 
 		key("n", "<space><space>tt", ":Telescope<CR>", { noremap = true })
+		key("n", "<space><space>th", ":Telescope harpoon marks<CR>", { noremap = true })
 		key("n", "<space><space>tf", ":Telescope find_files<CR>", { noremap = true })
 		key("n", "<space><space>tl", ":Telescope live_grep<CR>", { noremap = true })
 		key("n", "<space><space>tb", ":Telescope buffers<CR>", { noremap = true })

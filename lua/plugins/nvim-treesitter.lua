@@ -9,6 +9,8 @@ return {
       ensure_installed = {
         "markdown",
         "markdown_inline",
+        "blade",
+        "php",
       },
       sync_install = true,
     })
