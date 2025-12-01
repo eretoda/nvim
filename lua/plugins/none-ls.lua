@@ -9,7 +9,9 @@ return {
     null_ls.setup({
       diagnostics_format = "[#{m}] #{s} (#{c})",
       sources = {
-        b.formatting.prettier,
+        b.formatting.prettier.with({
+          cwd = vim.lsp.buf.server_ready and vim.lsp.buf.get_clients()[1].root_dir or vim.loop.cwd(),
+        }),
         b.formatting.stylua,
         b.formatting.stylelint,
         b.formatting.shfmt,

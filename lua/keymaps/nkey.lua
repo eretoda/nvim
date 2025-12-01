@@ -4,9 +4,9 @@ local key = require("utils").key
 key("n", "zx", ":source ~/.config/nvim/init.lua<CR>", { noremap = true })
 key("n", "<C-e>", ":w<CR>:lua print('saved')<CR>", { noremap = true })
 key("n", "gmks", ":lua MiniSessions.write('')<Left><Left>", { noremap = true })
-key("n", "<space>e", function()
-	vim.lsp.buf.format()
-end, { noremap = true })
+-- key("n", "<space>e", function()
+-- 	vim.lsp.buf.format()
+-- end, { noremap = true })
 
 -- ウィンドウ操作
 key("n", "<C-l>", "gt", { noremap = true })
