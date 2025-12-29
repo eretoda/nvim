@@ -8,15 +8,16 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				css = { "stylelint" },
+				css = { "prettier", lsp_format = "fallback" },
 				blade = { "blade-formatter" },
+				php = { "pint" },
 				-- Conform will run multiple formatters sequentially
-				python = { "reorder-python-imports", "black" },
+				python = { "black" },
 				-- You can customize some of the format options for the filetype (:help conform.format)
-				-- rust = { "rustfmt", lsp_format = "fallback" },
+				rust = { "rustfmt", lsp_format = "fallback" },
 				-- Conform will run the first available formatter
-				javascript = { "prettierd", "prettier", stop_after_first = true },
-				typescript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettier", stop_after_first = true },
+				typescript = { "prettier", stop_after_first = true },
 				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 			},

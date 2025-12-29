@@ -11,6 +11,7 @@ return {
         "markdown_inline",
         "blade",
         "php",
+        "python",
       },
       sync_install = true,
     })
