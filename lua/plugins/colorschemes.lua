@@ -19,8 +19,9 @@ return {
 		priority = 1000,
 		config = function()
 			require("cyberdream").setup({
+				-- variant = "light",
 				italic_comments = true,
-				-- transparent = true,
+				transparent = true,
 			})
 		end,
 	},
@@ -52,7 +53,7 @@ return {
 		config = function()
 			require("onedark").setup({
 				style = "warmer",
-				-- transparent = true,
+				transparent = true,
 			})
 			require("onedark").load()
 		end,

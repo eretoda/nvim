@@ -4,8 +4,8 @@ local cmd = utils.cmd
 
 -- NOTE 基本設定
 -- cmd("colorscheme tokyonight-night")
--- cmd("colorscheme gruvbox")
-cmd("colorscheme onedark")
+cmd("colorscheme gruvbox")
+-- cmd("colorscheme onedark")
 -- cmd("colorscheme murphy")
 -- cmd("colorscheme cyberdream")
 -- cmd("colorscheme slate")
@@ -18,7 +18,8 @@ opt.clipboard = "unnamedplus"
 opt.mouse = "a"
 opt.termguicolors = true
 opt.swapfile = false
-opt.background = "dark"
+-- opt.background = "dark"
+-- opt.background = "light"
 
 -- -- NOTE タブやインデント関連の設定
 -- cmd("set nowrap")
@@ -64,7 +65,7 @@ opt.updatetime = 360
 
 -- autocmd系
 -- vim.api.nvim_create_autocmd("VimEnter", { command = "ShowkeysToggle" })
-vim.api.nvim_create_autocmd("VimEnter", { command = "RenderMarkdown toggle" })
+-- vim.api.nvim_create_autocmd("VimEnter", { command = "RenderMarkdown toggle" })
 -- vim.api.nvim_create_autocmd("VimEnter", { command = "ColorizerToggle" })
 
 -- SetAllGreen()
